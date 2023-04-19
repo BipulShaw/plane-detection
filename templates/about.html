@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type= "text/css" href="{{url_for('static', filename='styles.css')}}">
+    <title>About us</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+          <img src="{{url_for('static', filename='iiest.png')}}" alt="iiest_logo">
+        </div>
+        <div class="title">
+          <h1>B.Tech Final Year Project</h1>
+        </div>
+        <div class="nav-buttons">
+            <a href="{{url_for('index_view')}}">Home</a>
+            <a href="{{url_for('about_page')}}">About us</a>
+          </div>
+    </nav>
+    <div class="about-us" style="text-align: center;">
+      <h2 style="margin-top: 20px;">About Us</h2>
+      <p style="font-size: 25px;"><em><strong style="font-size: 1.2em;">Project Topic:</strong> Digital plane detection on a randomly generated surface using a learning mechanism</em></p>
+      <p style="font-size: 18px;">Project done under the guidance of: Prof. Arindam Biswas, Dept. of Information Technology, IIEST Shibpur</p>
+      <p style="font-size: 18px;">Team members:</p>
+      <p style="font-size: 18px;">510819003 - Bipul Kumar Shaw</p>
+      <p style="font-size: 18px;">510819011 - Shailik Roy</p>
+      <p style="font-size: 18px;">510819019 - Aniket Majhi</p>
+      <p style="font-size: 18px;"><em>B.Tech 8th Semester, Department of Information Technology, IIEST Shibpur</em></p>
+  </div>
+  
+</body>
+</html>

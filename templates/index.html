@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type= "text/css" href="{{url_for('static', filename='styles.css')}}">
+    <title>Project BSA</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+          <img src="{{url_for('static', filename='iiest.png')}}" alt="iiest_logo">
+        </div>
+        <div class="title">
+          <h1>B.Tech Final Year Project</h1>
+        </div>
+        <div class="nav-buttons">
+          <a href="{{url_for('index_view')}}">Home</a>
+          <a href="{{url_for('about_page')}}">About us</a>
+        </div>
+        <!-- <div class="home">
+          <a href="{{url_for('index_view')}}">Home</a>
+        </div> -->
+      </nav>
+    <div>
+        <h3 style="text-align: center;">
+            Enter the value of h (to define a hxhxh coordinate space), shape of sliding window, and step size:
+        </h3>
+    </div>
+
+    <form id = "myForm" action="{{ url_for('test') }}" method="POST">
+      <div class="formelem">
+        <label for="input1">Dimension:</label>
+        <input type="number" name="input1" id="input1" value=30>
+        <br>
+        <label for="input2">Shape:</label>
+        <input type="number" name="input2" id="input2" value=9>
+        <br>
+        <label for="input3">Step:</label>
+        <input type="number" name="input3" id="input3" value=3>
+        <br>
+        <input id = "load-button" type="submit" value="Test!" onclick="showLoadingText()">
+        <button type = "button" id ="btn">Explain the output?</button>
+        <p id = "explanation">The output shows a 3D surface where the <em><strong>grey coloured</strong></em> voxels represent non-planes and the <em><strong>randomly coloured</strong></em> voxels represents individual planes detected by the model.</p>
+        </div>
+    </form>
+    <img src = "{{ image_url }}" class ="hide-text">
+    
+  <div id="loading-text"></div>
+
+  
+
+<script>
+  function showLoadingText() {
+    document.getElementById("loading-text").style.display = "block";
+  }
+
+  const btn = document.getElementById('btn');
+  btn.addEventListener('click', () => {
+    const exp = document.getElementById('explanation');
+    if(exp.style.display === 'none'){
+      exp.style.display = 'block';
+    } else{
+      exp.style.display = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>
